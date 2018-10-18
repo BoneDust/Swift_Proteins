@@ -18,13 +18,21 @@ class LoginViewController: UIViewController
     
     @IBOutlet weak var password: UITextField!
     
-    @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var touchButton: UIButton!
     
     @IBAction func loginInAction(_ sender: UIButton)
     {
-        //got nothing to do
+       
+        if (Username.text == "" || password.text == "")
+        {
+            self.createAlert(title: "Missing credentials", message: "Username or password is missing")
+        }
+        else
+        {
+            performSegue(withIdentifier: "ListSegue", sender: self)
+             //got nothing to do robably proceed to the next scrren
+        }
     }
     
     @IBAction func touchIDAuth(_ sender: UIButton)
@@ -36,12 +44,12 @@ class LoginViewController: UIViewController
                 (correctPrint, error) in
                 if (correctPrint == true)
                 {
-                    //proceed to next screen
-                    print("\ncontinuing to the next screen")
+                    self.performSegue(withIdentifier: "ListSegue", sender: self)
+                    print("\ncontinuing to the next screen\n")
                 }
                 else
                 {
-                    
+                    print("\ninvalid print\n")
                 }
             }
         )
@@ -60,6 +68,19 @@ class LoginViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func createAlert(title: String, message: String)
+    {
+        let alert = UIAlertController(title : title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:
+            {
+                (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }
+        ))
+        present(alert,animated: true, completion: nil)
+    }
+    
     func checkTouchIDCapabiliy()
     {
         let context = LAContext()
@@ -67,6 +88,13 @@ class LoginViewController: UIViewController
         if (!context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil))
         {
             touchButton.isHidden = true
+        }
+        else
+        {
+            if (context.biometryType != .touchID)
+            {
+                touchButton.isHidden = true
+            }
         }
     }
 }
