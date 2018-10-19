@@ -178,6 +178,7 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
         super.viewDidLoad()
         ligandSearchBar.delegate = self
         LigandTable.delegate = self
+       // LigandTable.layer.backgroundColor = UIColor.black.cgColor
         retrieveLigandsFromFile()
     }
 
