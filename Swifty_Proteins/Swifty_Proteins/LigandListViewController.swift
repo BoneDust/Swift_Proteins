@@ -11,34 +11,62 @@ import UIKit
 class LigandListViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate
 {
     var ligandList:[String] = []
+    var searchedLigands:[String] = []
+    var searchingForLigands = false
+    var selectedLigand: LigandModel?
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var ligandSearchBar: UISearchBar!
     
     @IBOutlet weak var LigandTable: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print("we have \(ligandList.count) ligands")
-        return (ligandList.count)
+        if (searchingForLigands)
+        {
+            return (searchedLigands.count)
+        }
+        else
+        {
+            return (ligandList.count)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if (searchingForLigands)
+        {
+            Ligand3DViewController.ligand = searchedLigands[indexPath.row]
+            retrieveLigand(searchedLigands[indexPath.row])
+            
+        }
+        else
+        {
+            Ligand3DViewController.ligand = ligandList[indexPath.row]
+            retrieveLigand(ligandList[indexPath.row])
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-       // let cell2 = tableView.dequeueReusableCell(withIdentifier: "ligandCell", for: indexPath) as! LigandTableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "ligandCell", for: indexPath)  as! LigandTableViewCell
-    
-        cell.ligandName.text = ligandList[indexPath.row]
+        if (searchingForLigands)
+        {
+            cell.ligandName.text = searchedLigands[indexPath.row]
+        }
+        else
+        {
+            cell.ligandName.text = ligandList[indexPath.row]
+        }
         cell.backgroundView = UIImageView(image: UIImage(named: "ligand_bg.jpg")!)
         cell.layer.borderColor = UIColor .black.cgColor
         cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
+        cell.layer.cornerRadius = 10
         cell.clipsToBounds = true
-        return cell
+        return (cell)
     }
     
 
-   
-    func retrieveLigands()
+    func retrieveLigandsFromFile()
     {
         let path = Bundle.main.path(forResource: "ligands", ofType: "txt")
         let fileManager = FileManager.default
@@ -49,15 +77,87 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
                 let fileText = try String(contentsOfFile: path!, encoding: .utf8)
                 ligandList = fileText.components(separatedBy: "\n")
             }
-            catch let error as NSError
+            catch // let error as NSError
             {
                 self.createAlert(title: "File Error", message: "Error occured when reading file")
-                print("\n\n\n\(error)")
             }
         }
         else
         {
             self.createAlert(title: "Ligands not found", message: "File containing ligands does not exist")
+        }
+    }
+    
+    func retrieveLigand(_ ligand: String)
+    {
+        let url1 = "https://files.rcsb.org/ligands/view/"
+        let url2 = "_ideal.pdb"
+
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        let indicator = UIActivityIndicatorView()
+        indicator.center = self.view.center
+        indicator.hidesWhenStopped = true
+        indicator.startAnimating()
+        self.view.addSubview(indicator)
+        
+        
+        let finalUrl = URL(string: url1 + ligand + url2)
+        let task = URLSession.shared.dataTask(with: finalUrl!, completionHandler:
+        {
+            (data, response, error) in
+            
+            if (response != nil)
+            {
+                let response = response as? HTTPURLResponse
+                if (response?.statusCode == 200)
+                {
+                    DispatchQueue.main.async
+                    {
+                        let responseContent = String(data: data!, encoding: String.Encoding(rawValue: String.Encoding.ascii.rawValue)) as String?
+                        //what to do
+                        var ligandData:[String] = []
+                        responseContent?.enumerateLines
+                        {
+                            (line, _) in
+                            ligandData.append(line)
+                        }
+                        
+                        UIApplication.shared.endIgnoringInteractionEvents()
+                        indicator.stopAnimating()
+                        self.performSegue(withIdentifier: "drawLigand", sender: self)
+                    }
+                }
+                else
+                {
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                    indicator.stopAnimating()
+                    self.createAlert(title: "Ligand not retrieved", message: "Ligand \(ligand) was not found.")
+                }
+            }
+            
+            else
+            {
+                UIApplication.shared.endIgnoringInteractionEvents()
+                indicator.stopAnimating()
+                self.createAlert(title: "Ligand not retrieved", message: "Ligand \(ligand) was not found.")
+            }
+        })
+        task.resume()
+    }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        searchingForLigands = true
+        searchedLigands = []
+        searchedLigands = ligandList.filter({$0.contains((ligandSearchBar.text!.uppercased()))})
+        if (searchedLigands.count == 0)
+        {
+            searchedLigands = ligandList
+        }
+        DispatchQueue.main.async
+        {
+            self.LigandTable.reloadData()
         }
     }
     
@@ -68,7 +168,7 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
             {
                 (action) in
                 alert.dismiss(animated: true, completion: nil)
-        }
+            }
         ))
         present(alert,animated: true, completion: nil)
     }
@@ -76,15 +176,14 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        searchBar.delegate = self
+        ligandSearchBar.delegate = self
         LigandTable.delegate = self
-        retrieveLigands()
+        retrieveLigandsFromFile()
     }
 
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        
     }
     
 }

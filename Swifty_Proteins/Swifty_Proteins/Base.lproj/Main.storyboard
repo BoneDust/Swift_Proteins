@@ -121,6 +121,7 @@
                     <navigationItem key="navigationItem" title="Login" id="GXc-lT-hN8"/>
                     <connections>
                         <outlet property="Username" destination="OYk-3S-xJ9" id="Ycf-EL-WUF"/>
+                        <outlet property="btnLogin" destination="QNl-5c-2DX" id="2No-6f-yVu"/>
                         <outlet property="password" destination="VY6-SZ-Bvr" id="NSc-nC-8Xx"/>
                         <outlet property="touchButton" destination="bFc-vL-qHS" id="5mk-e3-klG"/>
                         <segue destination="dqf-Su-rym" kind="show" identifier="ListSegue" id="bia-PD-0Wg"/>
@@ -163,7 +164,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOx-a9-ch8">
-                                                            <rect key="frame" x="15" y="11" width="345" height="22"/>
+                                                            <rect key="frame" x="15" y="11" width="694" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -189,7 +190,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="r6c-qX-EPE" firstAttribute="top" secondItem="W6u-HL-BMZ" secondAttribute="top" id="2U3-ZU-xL0"/>
                             <constraint firstItem="W6u-HL-BMZ" firstAttribute="bottom" secondItem="r6c-qX-EPE" secondAttribute="bottom" id="MJ3-U4-ak5"/>
@@ -201,12 +202,28 @@
                     <navigationItem key="navigationItem" title="Ligand List" id="JVr-ih-0ul"/>
                     <connections>
                         <outlet property="LigandTable" destination="spR-sx-YZO" id="bJq-4z-hMw"/>
-                        <outlet property="searchBar" destination="KF8-2U-1Xy" id="gmz-WJ-OXV"/>
+                        <outlet property="ligandSearchBar" destination="KF8-2U-1Xy" id="ZxD-Ag-ojp"/>
+                        <segue destination="ogx-gn-LCD" kind="show" identifier="drawLigand" id="8sV-wH-BAl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vX5-Ac-Ab9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688.79999999999995" y="28.817733990147783"/>
+            <point key="canvasLocation" x="409" y="29"/>
+        </scene>
+        <!--Ligand3D View Controller-->
+        <scene sceneID="TaK-aC-DXo">
+            <objects>
+                <viewController id="ogx-gn-LCD" customClass="Ligand3DViewController" customModule="Swifty_Proteins" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wga-01-0bu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="45G-l0-qgn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K1s-Ws-MwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="29"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QhI-Bs-1m5">

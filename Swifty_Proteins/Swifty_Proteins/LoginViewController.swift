@@ -18,6 +18,7 @@ class LoginViewController: UIViewController
     
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var btnLogin: UIButton!
     
     @IBOutlet weak var touchButton: UIButton!
     
@@ -57,6 +58,7 @@ class LoginViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        btnLogin.layer.cornerRadius = 15
         checkTouchIDCapabiliy()
 
         // Do any additional setup after loading the view.
