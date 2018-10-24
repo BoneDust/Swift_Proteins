@@ -7,21 +7,37 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct Atom
 {
     let name: String!
     let atomic_mass: Double!
-    let category: String!
     let number: Int!
     let symbol: String!
+    let summary: String!
+}
+
+struct Node
+{
+    var x_pos: Double!
+    var y_pos: Double!
+    var z_pos: Double!
+    var node_color: UIColor!
+    let atom: Atom!
+}
+
+struct Connection
+{
+    var node1: Node!
+    var node2: Node!
 }
 
 struct LigandModel
 {
     let name:  String!
-    let atoms: [Atom]!
+    var nodes: [Node] = []
+    var connections: [Connection] = []
     let atomsArray: [String]!
     let connectionsArray: [String]!
 }

@@ -15,7 +15,7 @@ class Ligand3DViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.title = "Ligand " + Ligand3DViewController.ligand + "structure"
+        self.title = "Ligand " + Ligand3DViewController.ligand
 
         // Do any additional setup after loading the view.
     }
