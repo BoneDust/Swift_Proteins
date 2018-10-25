@@ -150,8 +150,8 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
                             }
                         }
                         var nodes = self.getNodes(atomArray)
-                        //var connections = getConnections(connectionArray)
-                        // selectedLigand = LigandModel(name: ligandName, nodes: nodes, connections: connections)
+                        var connections = self.getConnections(connectionArray, nodes)
+                        selectedLigand = LigandModel(name: ligandName, nodes: nodes, connections: connections)
                         self.performSegue(withIdentifier: "drawLigand", sender: self)
                     }
                 }
@@ -189,7 +189,57 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
         }
         return (atoms)
     }
-    
+
+
+    func getConnections(_ connectionArray: [String], _ nodes : [Node]) -> [Connection]
+    {
+        var connections: [Connection] = []
+
+        for connectionString in connectionArray
+        {
+            let splitConnectionArray = connectionString.split(separator: " ")
+            let firstNodeID = Int(splitConnectionArray[1])
+            for index in 2...splitConnectionArray.count - 1
+            {
+                let secondNodeID = Int(splitConnectionArray[index])
+                if (!doesConnectionExist(connections, firstNodeID, secondNodeID))
+                {
+                    firstNode = self.getNodeByID(nodes, firstNodeID)!
+                    secondNode = self.getNodeByID(node, secondNodeID)!
+                    connections.append(Connection(firstNode, secondNode))
+                }
+            }
+        }
+        return (connections)
+    }
+
+    func doesConnectionExist(_ connections: [Connection], _ id1: Int, _ id2: Int) -> Bool
+    {
+        for connection in connections
+        {
+            if ((connection.node1.id == id1 && connection.node2.id == id2 ) ||
+                (connection.node1.id == id2 && connection.node2.id == id1 ))
+            {
+                return (true)
+            }
+        }
+        return (false)
+    }
+
+    func getNodeByID(_ nodes: [Node], _ id: Int) -> Node?
+    {
+        let resultNode: Node? = nil
+        for node in nodes
+        {
+            if (node.id == id)
+            {
+                resultNode = node
+                break
+            }
+        }
+        return (resultNode)
+    }
+     
     func getAtom(_ symbol: String) ->Atom?
     {
         var atom:Atom? = nil
