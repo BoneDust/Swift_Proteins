@@ -136,19 +136,18 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
                         let responseContent = String(data: data!, encoding: String.Encoding(rawValue: String.Encoding.ascii.rawValue)) as String?
                         var atomArray: [String] = []
                         var connectionArray: [String] = []
-                        responseContent?.enumerateLines//need to know what this is
+                       
+                        let lines = responseContent?.split(separator: "\n")
+                        for line in lines!
                         {
-                            (line, _) in
-        
                             if (line.range(of:"ATOM") != nil)
                             {
-                                atomArray.append(line)
+                                atomArray.append(String(line))
                             }
                             if (line.range(of:"CONECT") != nil)
                             {
-                                connectionArray.append(line)
+                                connectionArray.append(String(line))
                             }
-                        
                         }
                         var nodes = self.getNodes(atomArray)
                         //var connections = getConnections(connectionArray)
@@ -177,13 +176,14 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
         var id = 1
         for atomString in atomsArray
         {
-            let splitedAtom = atomString.components(separatedBy: " ")
+            
+            let splitedAtom = atomString.split(separator: " ")
             let atom = getAtom(String(splitedAtom[11]))
             let color = getCPKColor(String(splitedAtom[11]))
             let x = Double(splitedAtom[6])!
             let y = Double(splitedAtom[7])!
             let z = Double(splitedAtom[8])!
-            var node:Node = Node(id: id, x_pos: x, y_pos: y, z_pos: z, node_color: color, atom: atom)
+            let node:Node = Node(id: id, x_pos: x, y_pos: y, z_pos: z, node_color: color, atom: atom)
             atoms.append(node)
             id = id + 1
         }
