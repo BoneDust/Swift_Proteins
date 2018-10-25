@@ -20,6 +20,7 @@ struct Atom
 
 struct Node
 {
+    let id: Int!
     var x_pos: Double!
     var y_pos: Double!
     var z_pos: Double!
@@ -36,8 +37,6 @@ struct Connection
 struct LigandModel
 {
     let name:  String!
-    var nodes: [Node] = []
-    var connections: [Connection] = []
-    let atomsArray: [String]!
-    let connectionsArray: [String]!
+    var nodes: [Node]?
+    var connections: [Connection]?
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class Ligand3DViewController: UIViewController
 {
-    static var ligand:String!
+    static var ligand:String = "lerole"
 
     override func viewDidLoad()
     {

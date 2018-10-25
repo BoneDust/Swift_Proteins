@@ -1,0 +1,310 @@
+//
+//  LigandListViewController.swift
+//  Swifty_Proteins
+//
+//  Created by Goodwill TSHEKELA on 2018/10/18.
+//  Copyright © 2018 WTC_. All rights reserved.
+//
+
+import UIKit
+
+class LigandListViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate
+{
+    var ligandList:[String] = []
+    var searchedLigands:[String] = []
+    var searchingForLigands = false
+    var selectedLigand: LigandModel!
+    
+    @IBOutlet weak var ligandSearchBar: UISearchBar!
+    
+    @IBOutlet weak var LigandTable: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        if (searchingForLigands)
+        {
+            return (searchedLigands.count)
+        }
+        else
+        {
+            return (ligandList.count)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+    
+        if (searchingForLigands)
+        {
+            retrieveLigand(searchedLigands[indexPath.row])
+        }
+        else
+        {
+            retrieveLigand(ligandList[indexPath.row])
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ligandCell", for: indexPath)  as! LigandTableViewCell
+        if (searchingForLigands)
+        {
+            cell.ligandName.text = searchedLigands[indexPath.row]
+        }
+        else
+        {
+            cell.ligandName.text = ligandList[indexPath.row]
+        }
+        cell.backgroundView = UIImageView(image: UIImage(named: "ligand_bg.jpg")!)
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 10
+        return (cell)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        searchingForLigands = true
+        searchedLigands = []
+        searchedLigands = ligandList.filter({$0.contains((ligandSearchBar.text!.uppercased()))})
+        if (searchedLigands.count == 0)
+        {
+            searchedLigands = ligandList
+        }
+        DispatchQueue.main.async
+            {
+                self.LigandTable.reloadData()
+        }
+    }
+
+    func retrieveLigandsFromFile()
+    {
+        let path = Bundle.main.path(forResource: "ligands", ofType: "txt")
+        let fileManager = FileManager.default
+        if (fileManager.fileExists(atPath: path!))
+        {
+            do
+            {
+                let fileText = try String(contentsOfFile: path!, encoding: .utf8)
+                ligandList = fileText.components(separatedBy: "\n")
+            }
+            catch
+            {
+                self.createAlert(title: "File Error", message: "Error occured when reading file")
+            }
+        }
+        else
+        {
+            self.createAlert(title: "Ligands not found", message: "File containing ligands does not exist")
+        }
+    }
+    
+    func retrieveLigand(_ ligandName: String)
+    {
+        let url1 = "https://files.rcsb.org/ligands/view/"
+        let url2 = "_ideal.pdb"
+
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        let indicator = UIActivityIndicatorView()
+        indicator.center = self.view.center
+        indicator.hidesWhenStopped = true
+        indicator.startAnimating()
+        self.view.addSubview(indicator)
+        
+        
+        let finalUrl = URL(string: url1 + ligandName + url2)
+        let task = URLSession.shared.dataTask(with: finalUrl!, completionHandler:
+        {
+            (data, response, error) in
+            
+            if (error != nil)
+            {
+                UIApplication.shared.endIgnoringInteractionEvents()
+                indicator.stopAnimating()
+                self.createAlert(title: "Ligand not retrieved", message: "Ligand \(ligandName) was not found.")
+            }
+            
+            if (response != nil)
+            {
+                let response = response as? HTTPURLResponse
+                if (response?.statusCode == 200)
+                {
+                    DispatchQueue.main.async
+                    {
+                        UIApplication.shared.endIgnoringInteractionEvents()
+                        indicator.stopAnimating()
+                        let responseContent = String(data: data!, encoding: String.Encoding(rawValue: String.Encoding.ascii.rawValue)) as String?
+                        var atomArray: [String] = []
+                        var connectionArray: [String] = []
+                        responseContent?.enumerateLines//need to know what this is
+                        {
+                            (line, _) in
+        
+                            if (line.range(of:"ATOM") != nil)
+                            {
+                                atomArray.append(line)
+                            }
+                            if (line.range(of:"CONECT") != nil)
+                            {
+                                connectionArray.append(line)
+                            }
+                        
+                        }
+                        var nodes = self.getNodes(atomArray)
+                        //var connections = getConnections(connectionArray)
+                        // selectedLigand = LigandModel(name: ligandName, nodes: nodes, connections: connections)
+                        self.performSegue(withIdentifier: "drawLigand", sender: self)
+                    }
+                }
+                else
+                {
+                    DispatchQueue.main.async
+                    {
+                        UIApplication.shared.endIgnoringInteractionEvents()
+                        indicator.stopAnimating()
+                    }
+                    self.createAlert(title: "Ligand not retrieved", message: "Ligand \(ligandName) was not found.")
+                }
+            }
+        
+        })
+        task.resume()
+    }
+    
+    func getNodes(_ atomsArray: [String])->[Node]
+    {
+        var atoms: [Node] = []
+        var id = 1
+        for atomString in atomsArray
+        {
+            let splitedAtom = atomString.components(separatedBy: " ")
+            let atom = getAtom(String(splitedAtom[11]))
+            let color = getCPKColor(String(splitedAtom[11]))
+            let x = Double(splitedAtom[6])!
+            let y = Double(splitedAtom[7])!
+            let z = Double(splitedAtom[8])!
+            var node:Node = Node(id: id, x_pos: x, y_pos: y, z_pos: z, node_color: color, atom: atom)
+            atoms.append(node)
+            id = id + 1
+        }
+        return (atoms)
+    }
+    
+    func getAtom(_ symbol: String) ->Atom?
+    {
+        var atom:Atom? = nil
+        if let path = Bundle.main.path(forResource: "ElementsJSON", ofType: "json")
+        {
+            do
+            {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                if let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                {
+                    if let elements = jsonResponse!["elements"] as? [Any]
+                    {
+                        for element in elements
+                        {
+                            if let atomData = element as? [String: Any]
+                            {
+                                if (symbol == atomData["symbol"] as! String)
+                                {
+                                    atom = Atom(
+                                        name: atomData["name"] as! String,
+                                        atomic_mass: atomData["atomic_mass"] as! Double,
+                                        number: atomData["number"] as! Int,
+                                        symbol: atomData["symbol"] as! String,
+                                        summary: atomData["summary"] as! String
+                                    )
+                                    break
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                self.createAlert(title: "Element not found", message: "Element \(symbol) does not exist on the periodic table.")
+            }
+        }
+        return (atom)
+    }
+    
+    
+    func getCPKColor(_ symbol: String)->UIColor
+    {
+        switch symbol
+        {
+            case "H":
+                return UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+            case "C":
+                return UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+            case "N":
+                return UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 1)
+            case "O":
+                return UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+            case "F", "Cl" :
+                return UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 1)
+            case "Br":
+                return UIColor(red: 220/255, green: 20/255, blue: 60/255, alpha: 1)
+            case "I":
+                return UIColor(red: 148/255, green: 0/255, blue: 211/255, alpha: 1)
+            case "He", "Ne", "Ar", "Xe", "Kr":
+                return UIColor(red: 0/255, green: 255/255, blue: 255/255, alpha: 1)
+            case "P":
+                return UIColor(red: 255/255, green: 165/255, blue: 0/255, alpha: 1)
+            case "S":
+                return UIColor(red: 255/255, green: 255/255, blue: 0/255, alpha: 1)
+            case "B":
+                return UIColor(red: 250/255, green: 128/255, blue: 114/255, alpha: 1)
+            case "Li", "Na", "K", "Rb", "Cs", "Fr":
+                return UIColor(red: 238/255, green: 130/255, blue: 238/255, alpha: 1)
+            case "Be", "Mg", "Ca", "Sr", "Ba", "Ra":
+                return UIColor(red: 0/255, green: 100/255, blue: 0/255, alpha: 1)
+            case "Ti":
+                return UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
+            case "Fe":
+                return UIColor(red: 255/255, green: 76/255, blue: 0/255, alpha: 1)
+            default:
+                return UIColor(red: 255/255, green: 105/255, blue: 180/255, alpha: 1)
+        }
+    }
+    
+    func createAlert(title: String, message: String)
+    {
+        let alert = UIAlertController(title : title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:
+            {
+                (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }
+        ))
+        present(alert,animated: true, completion: nil)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        self.view.endEditing(true)
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        ligandSearchBar.delegate = self
+        LigandTable.delegate = self
+        
+        //dismiss keyboard on tap
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+       // LigandTable.layer.backgroundColor = UIColor.black.cgColor
+        retrieveLigandsFromFile()
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+    }
+    
+}

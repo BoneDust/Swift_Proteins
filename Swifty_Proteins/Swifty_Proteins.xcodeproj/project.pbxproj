@@ -10,6 +10,7 @@
 		A26660102178E6DE00CE6390 /* LigandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A266600F2178E6DE00CE6390 /* LigandTableViewCell.swift */; };
 		A26660122178EB3700CE6390 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A26660112178EB3700CE6390 /* ligands.txt */; };
 		A272BAD42178BC3B002242D5 /* LigandListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272BAD32178BC3B002242D5 /* LigandListViewController.swift */; };
+		A27F20222181C4D200B4A6C4 /* ElementsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = A27F20212181C4D200B4A6C4 /* ElementsJSON.json */; };
 		A292D75621774EBC00DCEFA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292D75521774EBC00DCEFA0 /* AppDelegate.swift */; };
 		A292D75B21774EBC00DCEFA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A292D75921774EBC00DCEFA0 /* Main.storyboard */; };
 		A292D75D21774EC700DCEFA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A292D75C21774EC700DCEFA0 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		A266600F2178E6DE00CE6390 /* LigandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandTableViewCell.swift; sourceTree = "<group>"; };
 		A26660112178EB3700CE6390 /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A272BAD32178BC3B002242D5 /* LigandListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandListViewController.swift; sourceTree = "<group>"; };
+		A27F20212181C4D200B4A6C4 /* ElementsJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ElementsJSON.json; sourceTree = "<group>"; };
 		A292D75221774EBC00DCEFA0 /* Swifty_Proteins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifty_Proteins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A292D75521774EBC00DCEFA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A292D75A21774EBC00DCEFA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +47,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A27F20232181FBDF00B4A6C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2E69B6B217A215F0038195B /* LigandModel.swift */,
+				A27F20212181C4D200B4A6C4 /* ElementsJSON.json */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A27F20242181FBFD00B4A6C4 /* ligand files */ = {
+			isa = PBXGroup;
+			children = (
+				A26660112178EB3700CE6390 /* ligands.txt */,
+			);
+			path = "ligand files";
+			sourceTree = "<group>";
+		};
+		A27F20252182073D00B4A6C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A266600F2178E6DE00CE6390 /* LigandTableViewCell.swift */,
+				A2E69B69217A04EB0038195B /* Ligand3DViewController.swift */,
+				A272BAD32178BC3B002242D5 /* LigandListViewController.swift */,
+				A292D767217766E200DCEFA0 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A27F20262182076900B4A6C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A292D75E21774EC700DCEFA0 /* LaunchScreen.storyboard */,
+				A292D75921774EBC00DCEFA0 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A292D74921774EBC00DCEFA0 = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +103,13 @@
 		A292D75421774EBC00DCEFA0 /* Swifty_Proteins */ = {
 			isa = PBXGroup;
 			children = (
+				A27F20262182076900B4A6C4 /* Views */,
+				A27F20252182073D00B4A6C4 /* Controllers */,
+				A27F20242181FBFD00B4A6C4 /* ligand files */,
+				A27F20232181FBDF00B4A6C4 /* Models */,
 				A292D75521774EBC00DCEFA0 /* AppDelegate.swift */,
-				A292D75921774EBC00DCEFA0 /* Main.storyboard */,
 				A292D75C21774EC700DCEFA0 /* Assets.xcassets */,
-				A292D75E21774EC700DCEFA0 /* LaunchScreen.storyboard */,
 				A292D76121774EC700DCEFA0 /* Info.plist */,
-				A292D767217766E200DCEFA0 /* LoginViewController.swift */,
-				A272BAD32178BC3B002242D5 /* LigandListViewController.swift */,
-				A26660112178EB3700CE6390 /* ligands.txt */,
-				A266600F2178E6DE00CE6390 /* LigandTableViewCell.swift */,
-				A2E69B69217A04EB0038195B /* Ligand3DViewController.swift */,
-				A2E69B6B217A215F0038195B /* LigandModel.swift */,
 			);
 			path = Swifty_Proteins;
 			sourceTree = "<group>";
@@ -138,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A292D76021774EC700DCEFA0 /* LaunchScreen.storyboard in Resources */,
+				A27F20222181C4D200B4A6C4 /* ElementsJSON.json in Resources */,
 				A292D75D21774EC700DCEFA0 /* Assets.xcassets in Resources */,
 				A292D75B21774EBC00DCEFA0 /* Main.storyboard in Resources */,
 				A26660122178EB3700CE6390 /* ligands.txt in Resources */,
