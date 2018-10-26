@@ -149,9 +149,9 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
                                 connectionArray.append(String(line))
                             }
                         }
-                        var nodes = self.getNodes(atomArray)
-                        var connections = self.getConnections(connectionArray, nodes)
-                        selectedLigand = LigandModel(name: ligandName, nodes: nodes, connections: connections)
+                        let nodes = self.getNodes(atomArray)
+                        let connections = self.getConnections(connectionArray, nodes)
+                        self.selectedLigand = LigandModel(name: ligandName, nodes: nodes, connections: connections)
                         self.performSegue(withIdentifier: "drawLigand", sender: self)
                     }
                 }
@@ -180,9 +180,9 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
             let splitedAtom = atomString.split(separator: " ")
             let atom = getAtom(String(splitedAtom[11]))
             let color = getCPKColor(String(splitedAtom[11]))
-            let x = Double(splitedAtom[6])!
-            let y = Double(splitedAtom[7])!
-            let z = Double(splitedAtom[8])!
+            let x = Float(splitedAtom[6])!
+            let y = Float(splitedAtom[7])!
+            let z = Float(splitedAtom[8])!
             let node:Node = Node(id: id, x_pos: x, y_pos: y, z_pos: z, node_color: color, atom: atom)
             atoms.append(node)
             id = id + 1
@@ -198,19 +198,29 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
         for connectionString in connectionArray
         {
             let splitConnectionArray = connectionString.split(separator: " ")
-            let firstNodeID = Int(splitConnectionArray[1])
+            let firstNodeID = Int(splitConnectionArray[1])!
             for index in 2...splitConnectionArray.count - 1
             {
-                let secondNodeID = Int(splitConnectionArray[index])
+                let secondNodeID = Int(splitConnectionArray[index])!
                 if (!doesConnectionExist(connections, firstNodeID, secondNodeID))
                 {
-                    firstNode = self.getNodeByID(nodes, firstNodeID)!
-                    secondNode = self.getNodeByID(node, secondNodeID)!
-                    connections.append(Connection(firstNode, secondNode))
+                    let firstNode = self.getNodeByID(nodes, firstNodeID)!
+                    let secondNode = self.getNodeByID(nodes, secondNodeID)!
+                    connections.append(Connection(node1: firstNode, node2: secondNode))
                 }
             }
         }
         return (connections)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "drawLigand"
+        {
+            let drawController = segue.destination as! Ligand3DViewController
+            drawController.ligandToDraw = self.selectedLigand
+        }
     }
 
     func doesConnectionExist(_ connections: [Connection], _ id1: Int, _ id2: Int) -> Bool
@@ -228,7 +238,7 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
 
     func getNodeByID(_ nodes: [Node], _ id: Int) -> Node?
     {
-        let resultNode: Node? = nil
+        var resultNode: Node? = nil
         for node in nodes
         {
             if (node.id == id)

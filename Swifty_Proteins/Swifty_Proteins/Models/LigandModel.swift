@@ -21,9 +21,9 @@ struct Atom
 struct Node
 {
     let id: Int!
-    var x_pos: Double!
-    var y_pos: Double!
-    var z_pos: Double!
+    var x_pos: Float!
+    var y_pos: Float!
+    var z_pos: Float!
     var node_color: UIColor!
     let atom: Atom!
 }

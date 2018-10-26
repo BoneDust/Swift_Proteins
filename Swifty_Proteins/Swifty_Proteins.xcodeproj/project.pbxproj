@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2373F762183469A00061B51 /* ConnectionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2373F752183469A00061B51 /* ConnectionNode.swift */; };
 		A26660102178E6DE00CE6390 /* LigandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A266600F2178E6DE00CE6390 /* LigandTableViewCell.swift */; };
 		A26660122178EB3700CE6390 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A26660112178EB3700CE6390 /* ligands.txt */; };
 		A272BAD42178BC3B002242D5 /* LigandListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272BAD32178BC3B002242D5 /* LigandListViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2373F752183469A00061B51 /* ConnectionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionNode.swift; sourceTree = "<group>"; };
 		A266600F2178E6DE00CE6390 /* LigandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandTableViewCell.swift; sourceTree = "<group>"; };
 		A26660112178EB3700CE6390 /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A272BAD32178BC3B002242D5 /* LigandListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandListViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			children = (
 				A2E69B6B217A215F0038195B /* LigandModel.swift */,
 				A27F20212181C4D200B4A6C4 /* ElementsJSON.json */,
+				A2373F752183469A00061B51 /* ConnectionNode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				A2E69B6C217A215F0038195B /* LigandModel.swift in Sources */,
 				A272BAD42178BC3B002242D5 /* LigandListViewController.swift in Sources */,
 				A2E69B6A217A04EB0038195B /* Ligand3DViewController.swift in Sources */,
+				A2373F762183469A00061B51 /* ConnectionNode.swift in Sources */,
 				A292D768217766E200DCEFA0 /* LoginViewController.swift in Sources */,
 				A26660102178E6DE00CE6390 /* LigandTableViewCell.swift in Sources */,
 				A292D75621774EBC00DCEFA0 /* AppDelegate.swift in Sources */,
