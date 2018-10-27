@@ -10,6 +10,7 @@ import SceneKit
 
 class ConnectionNode: SCNNode
 {
+    var cylinder:SCNCylinder!
     init (node1: Node, node2: Node)
     {
         super.init()
@@ -26,7 +27,7 @@ class ConnectionNode: SCNNode
         let alignNode = SCNNode()
         alignNode.eulerAngles.x = Float(Double.pi / 2)
         
-        let cylinder = SCNCylinder(radius: 0.1, height: CGFloat(height))
+        cylinder = SCNCylinder(radius: 0.1, height: CGFloat(height))
         cylinder.firstMaterial?.diffuse.contents = UIColor(red: 80/255, green: 80/255, blue: 80/255, alpha: 1)
 
         let cylinderNode = SCNNode(geometry: cylinder)

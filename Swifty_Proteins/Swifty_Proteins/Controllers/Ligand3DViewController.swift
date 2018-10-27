@@ -15,7 +15,33 @@ class Ligand3DViewController: UIViewController
     var ligandView: SCNView!
     var ligandScene: SCNScene!
     var ligandCamera: SCNNode!
+    var ballStickList:[SCNNode] = []
+    var spaceAtomList:[SCNNode] = []
     
+    @IBAction func modelSelection(_ sender: UISegmentedControl)
+    {
+        if (sender.selectedSegmentIndex == 0)
+        {
+            ligandScene.rootNode.enumerateChildNodes
+            {
+                (node, _) in
+                node.removeFromParentNode()
+            }
+            for node in ballStickList
+            {
+                ligandScene.rootNode.addChildNode(node)
+            }
+            self.drawInitialConnections()
+        }
+        else
+        {
+            ligandScene.rootNode.enumerateChildNodes
+            {
+                (node, _) in
+                node.removeFromParentNode()
+            }
+        }
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -23,8 +49,9 @@ class Ligand3DViewController: UIViewController
         initLigandView()
         initLigandScene()
         initLigandCamera()
-        drawLigandNodes()
-        drawConnections()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        drawInitialLigandNodes()
+        drawInitialConnections()
     }
     
     func initLigandView()
@@ -45,10 +72,10 @@ class Ligand3DViewController: UIViewController
     {
         ligandCamera = SCNNode()
         ligandCamera.camera = SCNCamera()
-        ligandCamera.position = SCNVector3(x: 0, y: 0, z: 5)
+        ligandCamera.position = SCNVector3(x: 0, y: 0, z: 500)
     }
     
-    func drawLigandNodes()
+    func drawInitialLigandNodes()
     {
         for node in ligandToDraw.nodes!
         {
@@ -57,10 +84,11 @@ class Ligand3DViewController: UIViewController
             let nodeSphere = SCNNode(geometry: nodeItem)
             nodeSphere.position = SCNVector3(x: node.x_pos!, y: node.y_pos!, z: node.z_pos!)
             ligandScene.rootNode.addChildNode(nodeSphere)
+            ballStickList.append(nodeSphere)
         }
     }
     
-    func drawConnections()
+    func drawInitialConnections()
     {
         for link in ligandToDraw.connections!
         {
@@ -68,6 +96,11 @@ class Ligand3DViewController: UIViewController
             ligandScene.rootNode.addChildNode(node)
         }
     }
+    
+    /*func drawSpaceFillingNodes()
+    {
+        for connection in lig
+    }*/
     
     override var shouldAutorotate: Bool
     {

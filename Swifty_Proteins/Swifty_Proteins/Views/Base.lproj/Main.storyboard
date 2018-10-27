@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Epa-3f-xbY">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Swifty_Proteins" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cxl-Yw-JUy">
-                                <rect key="frame" x="102.66666666666669" y="415.66666666666669" width="170" height="35"/>
+                                <rect key="frame" x="321" y="175.66666666666666" width="170" height="35"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VY6-SZ-Bvr">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="33"/>
@@ -49,7 +49,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B1i-Fc-7GF">
-                                <rect key="frame" x="102.66666666666669" y="367" width="170" height="35"/>
+                                <rect key="frame" x="321" y="127" width="170" height="35"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OYk-3S-xJ9">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="33"/>
@@ -80,7 +80,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNl-5c-2DX">
-                                <rect key="frame" x="102.66666666666669" y="492" width="170" height="26"/>
+                                <rect key="frame" x="321" y="252" width="170" height="26"/>
                                 <color key="backgroundColor" red="0.083226074951817275" green="0.64844161033756342" blue="0.30559011187532092" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="6ww-eb-cCM"/>
@@ -94,7 +94,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFc-vL-qHS">
-                                <rect key="frame" x="162.66666666666666" y="293" width="50" height="60"/>
+                                <rect key="frame" x="381" y="53" width="50" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="OoA-yu-1Xf"/>
                                     <constraint firstAttribute="width" constant="50" id="XKU-35-Qcv"/>
@@ -136,14 +136,14 @@
             <objects>
                 <viewController id="dqf-Su-rym" customClass="LigandListViewController" customModule="Swifty_Proteins" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6rf-xH-2xd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r6c-qX-EPE">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="44" y="32" width="724" height="322"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KF8-2U-1Xy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="724" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="coI-OJ-wDZ"/>
                                         </constraints>
@@ -153,18 +153,18 @@
                                         </connections>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="spR-sx-YZO">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="634"/>
+                                        <rect key="frame" x="0.0" y="56" width="724" height="266"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ligandCell" id="zW2-7Z-eKN" customClass="LigandTableViewCell" customModule="Swifty_Proteins" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="724" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zW2-7Z-eKN" id="QJd-SE-iOX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="724" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOx-a9-ch8">
-                                                            <rect key="frame" x="15" y="11" width="345" height="22"/>
+                                                            <rect key="frame" x="15" y="11" width="406" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -215,15 +215,31 @@
             <objects>
                 <viewController id="ogx-gn-LCD" customClass="Ligand3DViewController" customModule="Swifty_Proteins" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wga-01-0bu" customClass="SCNView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wtm-QM-InU">
+                                <rect key="frame" x="314.66666666666669" y="286" width="183" height="29"/>
+                                <segments>
+                                    <segment title="Balls &amp; Stick"/>
+                                    <segment title="Space-filling"/>
+                                </segments>
+                                <connections>
+                                    <action selector="modelSelection:" destination="ogx-gn-LCD" eventType="valueChanged" id="Nbp-hN-fGl"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" red="0.90706297588832485" green="0.90706297588832485" blue="0.90706297588832485" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="45G-l0-qgn" firstAttribute="bottom" secondItem="wtm-QM-InU" secondAttribute="bottom" constant="40" id="DZA-xR-veA"/>
+                            <constraint firstItem="wtm-QM-InU" firstAttribute="centerX" secondItem="45G-l0-qgn" secondAttribute="centerX" id="Fsx-rA-Tlu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="45G-l0-qgn"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1s-Ws-MwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222" y="29"/>
+            <point key="canvasLocation" x="1221.5999999999999" y="28.817733990147783"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QhI-Bs-1m5">
@@ -231,7 +247,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Epa-3f-xbY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WRc-RC-zti">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
