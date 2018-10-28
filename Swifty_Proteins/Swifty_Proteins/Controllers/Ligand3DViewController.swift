@@ -49,7 +49,7 @@ class Ligand3DViewController: UIViewController
         initLigandView()
         initLigandScene()
         initLigandCamera()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+       
         drawInitialLigandNodes()
         drawInitialConnections()
     }
@@ -58,6 +58,7 @@ class Ligand3DViewController: UIViewController
     {
         ligandView = self.view as! SCNView
         ligandView.allowsCameraControl = true
+
     }
  
     func initLigandScene()
@@ -65,7 +66,7 @@ class Ligand3DViewController: UIViewController
         ligandScene = SCNScene()
         ligandView.scene = ligandScene
         ligandView.isPlaying = true
-        ligandScene.background.contents = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+        ligandScene.background.contents = UIImage(named: "background")//UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
     }
 
     func initLigandCamera()

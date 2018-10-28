@@ -139,11 +139,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="jvO-Fo-f1T">
+                                <rect key="frame" x="44" y="32" width="724" height="322"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r6c-qX-EPE">
                                 <rect key="frame" x="44" y="32" width="724" height="322"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KF8-2U-1Xy">
                                         <rect key="frame" x="0.0" y="0.0" width="724" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="coI-OJ-wDZ"/>
                                         </constraints>
@@ -154,7 +158,8 @@
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="spR-sx-YZO">
                                         <rect key="frame" x="0.0" y="56" width="724" height="266"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ligandCell" id="zW2-7Z-eKN" customClass="LigandTableViewCell" customModule="Swifty_Proteins" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="724" height="44"/>
@@ -164,12 +169,13 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOx-a9-ch8">
-                                                            <rect key="frame" x="15" y="11" width="406" height="22"/>
+                                                            <rect key="frame" x="15" y="11" width="650" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" red="0.4103491653241188" green="0.80259197800908333" blue="0.92639593908629436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="dOx-a9-ch8" firstAttribute="leading" secondItem="QJd-SE-iOX" secondAttribute="leadingMargin" id="Bf5-Nn-faz"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="dOx-a9-ch8" secondAttribute="bottom" id="Yzm-HK-3A1"/>
@@ -177,6 +183,7 @@
                                                         <constraint firstItem="dOx-a9-ch8" firstAttribute="top" secondItem="QJd-SE-iOX" secondAttribute="topMargin" id="o3u-en-pvj"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="ligandName" destination="dOx-a9-ch8" id="aUO-3O-xkc"/>
                                                 </connections>
@@ -188,14 +195,19 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="r6c-qX-EPE" firstAttribute="top" secondItem="W6u-HL-BMZ" secondAttribute="top" id="2U3-ZU-xL0"/>
+                            <constraint firstItem="jvO-Fo-f1T" firstAttribute="top" secondItem="W6u-HL-BMZ" secondAttribute="top" id="Gy5-DJ-Xyq"/>
                             <constraint firstItem="W6u-HL-BMZ" firstAttribute="bottom" secondItem="r6c-qX-EPE" secondAttribute="bottom" id="MJ3-U4-ak5"/>
                             <constraint firstItem="r6c-qX-EPE" firstAttribute="trailing" secondItem="W6u-HL-BMZ" secondAttribute="trailing" id="NuM-yb-sxs"/>
                             <constraint firstItem="r6c-qX-EPE" firstAttribute="leading" secondItem="W6u-HL-BMZ" secondAttribute="leading" id="QJZ-TD-Pln"/>
+                            <constraint firstItem="W6u-HL-BMZ" firstAttribute="bottom" secondItem="jvO-Fo-f1T" secondAttribute="bottom" id="Ths-P8-A7z"/>
+                            <constraint firstItem="W6u-HL-BMZ" firstAttribute="trailing" secondItem="jvO-Fo-f1T" secondAttribute="trailing" id="dvc-8k-rMD"/>
+                            <constraint firstItem="jvO-Fo-f1T" firstAttribute="leading" secondItem="W6u-HL-BMZ" secondAttribute="leading" id="xSX-Cf-RUC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W6u-HL-BMZ"/>
                     </view>
@@ -229,7 +241,6 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.90706297588832485" green="0.90706297588832485" blue="0.90706297588832485" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="45G-l0-qgn" firstAttribute="bottom" secondItem="wtm-QM-InU" secondAttribute="bottom" constant="40" id="DZA-xR-veA"/>
                             <constraint firstItem="wtm-QM-InU" firstAttribute="centerX" secondItem="45G-l0-qgn" secondAttribute="centerX" id="Fsx-rA-Tlu"/>
@@ -262,5 +273,6 @@
     </scenes>
     <resources>
         <image name="TouchPrint" width="120" height="155"/>
+        <image name="background" width="5717" height="3025"/>
     </resources>
 </document>

@@ -55,10 +55,7 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
         {
             cell.ligandName.text = ligandList[indexPath.row]
         }
-        cell.backgroundView = UIImageView(image: UIImage(named: "ligand_bg.jpg")!)
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 10
+        
         return (cell)
     }
     
