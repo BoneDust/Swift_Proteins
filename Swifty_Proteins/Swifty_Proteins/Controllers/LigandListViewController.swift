@@ -180,7 +180,7 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
             let x = Float(splitedAtom[6])!
             let y = Float(splitedAtom[7])!
             let z = Float(splitedAtom[8])!
-            let node:Node = Node(id: id, x_pos: x, y_pos: y, z_pos: z, node_color: color, atom: atom)
+            let node:Node = Node(id: id, x_pos: x, y_pos: y, z_pos: z, node_color: color, atom: atom, plotted: false, plottedVector: nil)
             atoms.append(node)
             id = id + 1
         }

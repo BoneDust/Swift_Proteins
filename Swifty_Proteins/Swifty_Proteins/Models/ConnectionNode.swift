@@ -15,7 +15,7 @@ class ConnectionNode: SCNNode
     {
         super.init()
         let primaryNode = SCNNode()
-        let height = distance(node1, node2)
+        let height = distance(node1, node2) + 0.25
         
         
         self.position = SCNVector3(x: node1.x_pos, y: node1.y_pos, z: node1.z_pos)

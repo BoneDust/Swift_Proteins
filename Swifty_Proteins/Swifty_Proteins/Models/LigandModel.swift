@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SceneKit
 
 struct Atom
 {
@@ -26,6 +27,8 @@ struct Node
     var z_pos: Float!
     var node_color: UIColor!
     let atom: Atom!
+    var plotted: Bool!
+    var plottedVector: SCNVector3!
 }
 
 struct Connection
