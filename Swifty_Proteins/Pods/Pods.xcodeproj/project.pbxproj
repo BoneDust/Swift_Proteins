@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0581138407777101E612CFF16FA8B52E /* PCLBlurEffectAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DBDA77107CA66F4EB6F842533B598 /* PCLBlurEffectAlert.swift */; };
+		146EF086AE073D27C35E050668BF674E /* PCLBlurEffectAlert-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A3812507665B6F2D4CA2BAF282036CC /* PCLBlurEffectAlert-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25FD12DE5D3BC67BCB6693D74DA502D7 /* PCLBlurEffectAlert+TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21059DFD0ED664212C761AADC1615BD0 /* PCLBlurEffectAlert+TransitionAnimator.swift */; };
+		371F3125D823EF3682B8F41D4D5D1C36 /* Pods-Swifty_Proteins-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B74BD86EFF5BC553E64925D5F8D04227 /* Pods-Swifty_Proteins-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D65F5888F1937D2C0D4BBE1D024A49A /* PCLBlurEffectAlert+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4330837DF9CD4B508FD34531D08FA4 /* PCLBlurEffectAlert+Controller.swift */; };
+		55FAB33C25172356DBAD9067CFCF10EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		65C33DC92CBE4CB3AE7D9C9E2E9BAD96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		89A5E038E12A6BDB1DF6E7022527C52A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
+		91B25C597A3B26E1C36BDD0AE4DE0D3C /* PCLBlurEffectAlert+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DC1AFB8F3000F99E52FD539EFB4899 /* PCLBlurEffectAlert+Action.swift */; };
+		971E074DC9A54F9ED257616D35D73455 /* Pods-Swifty_Proteins-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6588BC2F435F13CF78538BDEF40435 /* Pods-Swifty_Proteins-dummy.m */; };
+		BD555D51093505EB69C4BACA3583FB21 /* PCLBlurEffectAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 7095B8EAB3E11874208B69E5295839CC /* PCLBlurEffectAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6501E197494AAD7AABF294E53F7B053 /* PCLBlurEffectAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B45B808236762A3080AF9DDFB92CB7 /* PCLBlurEffectAlert-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30361AE0CC3628644EFF32B015FCEEE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D560CD365CD24C9304C7E1ED1B37629B;
+			remoteInfo = PCLBlurEffectAlert;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A3812507665B6F2D4CA2BAF282036CC /* PCLBlurEffectAlert-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLBlurEffectAlert-umbrella.h"; sourceTree = "<group>"; };
+		13E05F530FEA1417D1C5E7BA9AED851D /* PCLBlurEffectAlert.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PCLBlurEffectAlert.xcconfig; sourceTree = "<group>"; };
+		21059DFD0ED664212C761AADC1615BD0 /* PCLBlurEffectAlert+TransitionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PCLBlurEffectAlert+TransitionAnimator.swift"; path = "Sources/PCLBlurEffectAlert+TransitionAnimator.swift"; sourceTree = "<group>"; };
+		23A77C9B94F7CAA0CADDD104724F430D /* Pods-Swifty_Proteins.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Swifty_Proteins.modulemap"; sourceTree = "<group>"; };
+		2B22DE1F225E635F87BF87D6212E3567 /* Pods-Swifty_Proteins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swifty_Proteins.release.xcconfig"; sourceTree = "<group>"; };
+		3293161DC315FBD169B5DDDA0041D177 /* Pods-Swifty_Proteins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swifty_Proteins.debug.xcconfig"; sourceTree = "<group>"; };
+		32C82E88127DE3CEAEA5569B69A02759 /* PCLBlurEffectAlert.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PCLBlurEffectAlert.modulemap; sourceTree = "<group>"; };
+		3E4330837DF9CD4B508FD34531D08FA4 /* PCLBlurEffectAlert+Controller.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PCLBlurEffectAlert+Controller.swift"; path = "Sources/PCLBlurEffectAlert+Controller.swift"; sourceTree = "<group>"; };
+		4D1CABFEEFA2AA52D43D35E3A32EDDDF /* Pods_Swifty_Proteins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swifty_Proteins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		518EE7F4AC5695FFEE685B87D949CB15 /* PCLBlurEffectAlert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLBlurEffectAlert-prefix.pch"; sourceTree = "<group>"; };
+		54BC365CC776158D89AF0C62325965F8 /* PCLBlurEffectAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PCLBlurEffectAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55DC1AFB8F3000F99E52FD539EFB4899 /* PCLBlurEffectAlert+Action.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PCLBlurEffectAlert+Action.swift"; path = "Sources/PCLBlurEffectAlert+Action.swift"; sourceTree = "<group>"; };
+		5DE9C88697E56068EF5060E1320FD4E6 /* Pods-Swifty_Proteins-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swifty_Proteins-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5F6588BC2F435F13CF78538BDEF40435 /* Pods-Swifty_Proteins-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swifty_Proteins-dummy.m"; sourceTree = "<group>"; };
+		606DE2EA3AA35096E9E748BBCF0C1813 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6332D34639848AC582598F9AA0AEFE24 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7095B8EAB3E11874208B69E5295839CC /* PCLBlurEffectAlert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PCLBlurEffectAlert.h; path = Sources/PCLBlurEffectAlert.h; sourceTree = "<group>"; };
+		860DBDA77107CA66F4EB6F842533B598 /* PCLBlurEffectAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PCLBlurEffectAlert.swift; path = Sources/PCLBlurEffectAlert.swift; sourceTree = "<group>"; };
+		88E050460503C5392194ABB693189B8D /* Pods-Swifty_Proteins-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swifty_Proteins-resources.sh"; sourceTree = "<group>"; };
+		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B74BD86EFF5BC553E64925D5F8D04227 /* Pods-Swifty_Proteins-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Swifty_Proteins-umbrella.h"; sourceTree = "<group>"; };
+		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C9B45B808236762A3080AF9DDFB92CB7 /* PCLBlurEffectAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PCLBlurEffectAlert-dummy.m"; sourceTree = "<group>"; };
+		D47ACB7AF99A3776B8DBC71213884E99 /* Pods-Swifty_Proteins-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Swifty_Proteins-acknowledgements.plist"; sourceTree = "<group>"; };
+		ED7E1B32E10B3D8630FFDC63C1BB6CDE /* Pods-Swifty_Proteins-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swifty_Proteins-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		54F5A780041E3A616F33C116EB0D5484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55FAB33C25172356DBAD9067CFCF10EE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		556C6D05BD2BAF61D9F5B808BDAC9EA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C33DC92CBE4CB3AE7D9C9E2E9BAD96 /* Foundation.framework in Frameworks */,
+				89A5E038E12A6BDB1DF6E7022527C52A /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				908E902E026C5C22904CF9014A5604AD /* Foundation.framework */,
+				BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B5EC11C2531F6CDF9A9E1B1459C4123 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54BC365CC776158D89AF0C62325965F8 /* PCLBlurEffectAlert.framework */,
+				4D1CABFEEFA2AA52D43D35E3A32EDDDF /* Pods_Swifty_Proteins.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57AD081AC326DAF5217963394A16A4E4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8454AB7026C1DF17BBE3D78E26E681D /* Pods-Swifty_Proteins */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5A3700F4AA82FC45DB931BE5EF629116 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6332D34639848AC582598F9AA0AEFE24 /* Info.plist */,
+				32C82E88127DE3CEAEA5569B69A02759 /* PCLBlurEffectAlert.modulemap */,
+				13E05F530FEA1417D1C5E7BA9AED851D /* PCLBlurEffectAlert.xcconfig */,
+				C9B45B808236762A3080AF9DDFB92CB7 /* PCLBlurEffectAlert-dummy.m */,
+				518EE7F4AC5695FFEE685B87D949CB15 /* PCLBlurEffectAlert-prefix.pch */,
+				0A3812507665B6F2D4CA2BAF282036CC /* PCLBlurEffectAlert-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PCLBlurEffectAlert";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				87BFF6455DE125506EB26C035DE245BB /* Pods */,
+				4B5EC11C2531F6CDF9A9E1B1459C4123 /* Products */,
+				57AD081AC326DAF5217963394A16A4E4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		87BFF6455DE125506EB26C035DE245BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A81610AE027BAC313FAAEAF2382387ED /* PCLBlurEffectAlert */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A81610AE027BAC313FAAEAF2382387ED /* PCLBlurEffectAlert */ = {
+			isa = PBXGroup;
+			children = (
+				7095B8EAB3E11874208B69E5295839CC /* PCLBlurEffectAlert.h */,
+				860DBDA77107CA66F4EB6F842533B598 /* PCLBlurEffectAlert.swift */,
+				55DC1AFB8F3000F99E52FD539EFB4899 /* PCLBlurEffectAlert+Action.swift */,
+				3E4330837DF9CD4B508FD34531D08FA4 /* PCLBlurEffectAlert+Controller.swift */,
+				21059DFD0ED664212C761AADC1615BD0 /* PCLBlurEffectAlert+TransitionAnimator.swift */,
+				5A3700F4AA82FC45DB931BE5EF629116 /* Support Files */,
+			);
+			path = PCLBlurEffectAlert;
+			sourceTree = "<group>";
+		};
+		C8454AB7026C1DF17BBE3D78E26E681D /* Pods-Swifty_Proteins */ = {
+			isa = PBXGroup;
+			children = (
+				606DE2EA3AA35096E9E748BBCF0C1813 /* Info.plist */,
+				23A77C9B94F7CAA0CADDD104724F430D /* Pods-Swifty_Proteins.modulemap */,
+				5DE9C88697E56068EF5060E1320FD4E6 /* Pods-Swifty_Proteins-acknowledgements.markdown */,
+				D47ACB7AF99A3776B8DBC71213884E99 /* Pods-Swifty_Proteins-acknowledgements.plist */,
+				5F6588BC2F435F13CF78538BDEF40435 /* Pods-Swifty_Proteins-dummy.m */,
+				ED7E1B32E10B3D8630FFDC63C1BB6CDE /* Pods-Swifty_Proteins-frameworks.sh */,
+				88E050460503C5392194ABB693189B8D /* Pods-Swifty_Proteins-resources.sh */,
+				B74BD86EFF5BC553E64925D5F8D04227 /* Pods-Swifty_Proteins-umbrella.h */,
+				3293161DC315FBD169B5DDDA0041D177 /* Pods-Swifty_Proteins.debug.xcconfig */,
+				2B22DE1F225E635F87BF87D6212E3567 /* Pods-Swifty_Proteins.release.xcconfig */,
+			);
+			name = "Pods-Swifty_Proteins";
+			path = "Target Support Files/Pods-Swifty_Proteins";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A45CBA12A623351C0A66148A607A1C44 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				146EF086AE073D27C35E050668BF674E /* PCLBlurEffectAlert-umbrella.h in Headers */,
+				BD555D51093505EB69C4BACA3583FB21 /* PCLBlurEffectAlert.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E910FB173662AEBBC2C2B2E3F8414326 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371F3125D823EF3682B8F41D4D5D1C36 /* Pods-Swifty_Proteins-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A4E2A9B5106E4835A76BE0F751A0E074 /* Pods-Swifty_Proteins */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AF279A0F27FD2FDB4677FE612F35044 /* Build configuration list for PBXNativeTarget "Pods-Swifty_Proteins" */;
+			buildPhases = (
+				FE8C7D5571711C40A29EF41E49A549E1 /* Sources */,
+				54F5A780041E3A616F33C116EB0D5484 /* Frameworks */,
+				E910FB173662AEBBC2C2B2E3F8414326 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4405BD2EB3E4840CA6F856157984DE98 /* PBXTargetDependency */,
+			);
+			name = "Pods-Swifty_Proteins";
+			productName = "Pods-Swifty_Proteins";
+			productReference = 4D1CABFEEFA2AA52D43D35E3A32EDDDF /* Pods_Swifty_Proteins.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D560CD365CD24C9304C7E1ED1B37629B /* PCLBlurEffectAlert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F3B4DBD56599FD0DC8A93A89F0E4253 /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */;
+			buildPhases = (
+				D9D69DFF554B9B5A2856FA2E64319AF4 /* Sources */,
+				556C6D05BD2BAF61D9F5B808BDAC9EA8 /* Frameworks */,
+				A45CBA12A623351C0A66148A607A1C44 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PCLBlurEffectAlert;
+			productName = PCLBlurEffectAlert;
+			productReference = 54BC365CC776158D89AF0C62325965F8 /* PCLBlurEffectAlert.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 4B5EC11C2531F6CDF9A9E1B1459C4123 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D560CD365CD24C9304C7E1ED1B37629B /* PCLBlurEffectAlert */,
+				A4E2A9B5106E4835A76BE0F751A0E074 /* Pods-Swifty_Proteins */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9D69DFF554B9B5A2856FA2E64319AF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91B25C597A3B26E1C36BDD0AE4DE0D3C /* PCLBlurEffectAlert+Action.swift in Sources */,
+				4D65F5888F1937D2C0D4BBE1D024A49A /* PCLBlurEffectAlert+Controller.swift in Sources */,
+				25FD12DE5D3BC67BCB6693D74DA502D7 /* PCLBlurEffectAlert+TransitionAnimator.swift in Sources */,
+				C6501E197494AAD7AABF294E53F7B053 /* PCLBlurEffectAlert-dummy.m in Sources */,
+				0581138407777101E612CFF16FA8B52E /* PCLBlurEffectAlert.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8C7D5571711C40A29EF41E49A549E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				971E074DC9A54F9ED257616D35D73455 /* Pods-Swifty_Proteins-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4405BD2EB3E4840CA6F856157984DE98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PCLBlurEffectAlert;
+			target = D560CD365CD24C9304C7E1ED1B37629B /* PCLBlurEffectAlert */;
+			targetProxy = 30361AE0CC3628644EFF32B015FCEEE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2AFB14FB1F59B99AA708C9AC132E71EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3293161DC315FBD169B5DDDA0041D177 /* Pods-Swifty_Proteins.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Swifty_Proteins/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Swifty_Proteins/Pods-Swifty_Proteins.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3E6E6C9BBE676B1547596CD58D5DA849 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13E05F530FEA1417D1C5E7BA9AED851D /* PCLBlurEffectAlert.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PCLBlurEffectAlert/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert.modulemap";
+				PRODUCT_MODULE_NAME = PCLBlurEffectAlert;
+				PRODUCT_NAME = PCLBlurEffectAlert;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5DC0083F57E9AB706B46C5B5D73B38D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6A9BFEC85DB4339BEA3372C446B65708 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13E05F530FEA1417D1C5E7BA9AED851D /* PCLBlurEffectAlert.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PCLBlurEffectAlert/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert.modulemap";
+				PRODUCT_MODULE_NAME = PCLBlurEffectAlert;
+				PRODUCT_NAME = PCLBlurEffectAlert;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AEEA80476F98EB645C4DD53EB2BB6D88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D198BDD05AF310F40B7DBC34612274A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B22DE1F225E635F87BF87D6212E3567 /* Pods-Swifty_Proteins.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Swifty_Proteins/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Swifty_Proteins/Pods-Swifty_Proteins.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AF279A0F27FD2FDB4677FE612F35044 /* Build configuration list for PBXNativeTarget "Pods-Swifty_Proteins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AFB14FB1F59B99AA708C9AC132E71EA /* Debug */,
+				D198BDD05AF310F40B7DBC34612274A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DC0083F57E9AB706B46C5B5D73B38D8 /* Debug */,
+				AEEA80476F98EB645C4DD53EB2BB6D88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F3B4DBD56599FD0DC8A93A89F0E4253 /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A9BFEC85DB4339BEA3372C446B65708 /* Debug */,
+				3E6E6C9BBE676B1547596CD58D5DA849 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

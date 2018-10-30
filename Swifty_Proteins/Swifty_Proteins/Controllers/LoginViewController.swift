@@ -45,13 +45,18 @@ class LoginViewController: UIViewController
                 (correctPrint, error) in
                 if (correctPrint == true)
                 {
-                    self.performSegue(withIdentifier: "ListSegue", sender: self)
-                    print("\ncontinuing to the next screen\n")
+                    DispatchQueue.main.async
+                    {
+                        self.performSegue(withIdentifier: "ListSegue", sender: self)
+                    }
+                
+                    
                 }
                 else
                 {
-                    print("\ninvalid print\n")
+                     self.createAlert(title: "Touch Auth Failed", message: "Wrong fingerprint submitted")
                 }
+                
             }
         )
     }
@@ -60,8 +65,6 @@ class LoginViewController: UIViewController
         super.viewDidLoad()
         btnLogin.layer.cornerRadius = 15
         checkTouchIDCapabiliy()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning()

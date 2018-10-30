@@ -8,6 +8,7 @@
 
 import UIKit
 import SceneKit
+import PCLBlurEffectAlert
 
 class Ligand3DViewController: UIViewController
 {
@@ -23,9 +24,8 @@ class Ligand3DViewController: UIViewController
     {
         if (sender.selectedSegmentIndex == 0)
         {
-            ligandScene.rootNode.enumerateChildNodes
+            for node in ligandScene.rootNode.childNodes
             {
-                (node, _) in
                 node.removeFromParentNode()
             }
             for node in ballStickList
@@ -73,14 +73,14 @@ class Ligand3DViewController: UIViewController
         ligandScene = SCNScene()
         ligandView.scene = ligandScene
         ligandView.isPlaying = true
-        ligandScene.background.contents = UIImage(named: "background")//UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+        ligandScene.background.contents = UIImage(named: "background")
     }
 
     func initLigandCamera()
     {
         ligandCamera = SCNNode()
         ligandCamera.camera = SCNCamera()
-        ligandCamera.position = SCNVector3(x: 0, y: 0, z: -500)
+        ligandCamera.position = SCNVector3(x: 0, y: 0, z: 100)
     }
     
     func drawInitialLigandNodes()
@@ -91,6 +91,7 @@ class Ligand3DViewController: UIViewController
             nodeItem.materials.first?.diffuse.contents = node.node_color
             let nodeSphere = SCNNode(geometry: nodeItem)
             nodeSphere.position = SCNVector3(x: node.x_pos!, y: node.y_pos!, z: node.z_pos!)
+            nodeSphere.name = node.atom.name + "\n" + node.atom.summary
             ligandScene.rootNode.addChildNode(nodeSphere)
             ballStickList.append(nodeSphere)
         }
@@ -107,52 +108,41 @@ class Ligand3DViewController: UIViewController
     
     func drawSpaceFillingNodes()
     {
-        let hybrid = SCNNode()
-        hybrid.position = SCNVector3(x: 0, y: 0, z: 0)
-        for node in ballStickList
-        {
-            hybrid.addChildNode(node)
-            let dist = self.distance(hybrid.position, node.position)
-            let factor = dist / 0.25
-            let new_x2 = (factor * hybrid.position.x) + node.position.x
-            let new_y2 = (factor * hybrid.position.y) + node.position.y
-            let new_z2 = (factor * hybrid.position.z) + node.position.z
-            
-            //let nodeItem2:SCNGeometry = SCNSphere(radius: 0.5)
-            //nodeItem2.materials.first?.diffuse.contents = link.node2.node_color
-            //let nodeSphere2 = SCNNode(geometry: nodeItem2)
-            node.position = SCNVector3(x: new_x2, y: new_y2, z: new_z2)
-            hybrid.addChildNode(node)
-            
-            //ligandScene.rootNode.addChildNode(node)
-        }
+       
+      //the other modelling
+    }
     
-        
-        ligandScene.rootNode.addChildNode(hybrid)
-      
+    func createNodeInfoPopup(_ title: String, _ message: String)
+    {
+        let popup = PCLBlurEffectAlertController(title: title, message: message, effect: UIBlurEffect(style: .extraLight), style: .actionSheet)
+        let popupAction = PCLBlurEffectAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        popup.addAction(popupAction)
+        popup.configure(cornerRadius: 10)
+        //still need some configuring
+        popup.show()
     }
     
     @objc func shareAction()
     {
-        print("ggjkb")
-        
         let image = ligandView.snapshot()
         let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
-        if let popoverPresentationController = activityController.popoverPresentationController
-        {
-            popoverPresentationController.sourceView = self.ligandView
-        }
-        print("done")
     }
     
-    func distance (_ v1: SCNVector3, _ v2: SCNVector3) -> Float
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        var dist = abs(v1.x - v2.x) * abs(v1.x - v2.x)
-        dist += abs(v1.y - v2.y) * abs(v1.y - v2.y)
-        dist += abs(v1.z - v2.z) * abs(v1.z - v2.z)
-        dist = Float(sqrt(dist))
-        return (dist)
+        let tapped = touches.first!
+        
+        let position = tapped.location(in: ligandView)
+        let tappedItems = ligandView.hitTest(position, options: nil)
+        if let  tappedItem = tappedItems.first
+        {
+            let tappedNode = tappedItem.node
+            let nodeDetails = tappedNode.name!.split(separator: "\n")
+            createNodeInfoPopup(String(nodeDetails[0]), String(nodeDetails[1]))
+        }
+        
     }
     
     override var shouldAutorotate: Bool

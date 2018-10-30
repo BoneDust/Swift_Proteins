@@ -33,7 +33,7 @@
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>ayeyeyeye</string>
+	<string>To save the screenshots of your ligands</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
