@@ -18,6 +18,7 @@
 		A292D75D21774EC700DCEFA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A292D75C21774EC700DCEFA0 /* Assets.xcassets */; };
 		A292D76021774EC700DCEFA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A292D75E21774EC700DCEFA0 /* LaunchScreen.storyboard */; };
 		A292D768217766E200DCEFA0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292D767217766E200DCEFA0 /* LoginViewController.swift */; };
+		A2D8B461218B2866001B0DA0 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2D8B460218B2866001B0DA0 /* credentials.plist */; };
 		A2E69B6A217A04EB0038195B /* Ligand3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E69B69217A04EB0038195B /* Ligand3DViewController.swift */; };
 		A2E69B6C217A215F0038195B /* LigandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E69B6B217A215F0038195B /* LigandModel.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		A292D75F21774EC700DCEFA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A292D76121774EC700DCEFA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A292D767217766E200DCEFA0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2D8B460218B2866001B0DA0 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		A2E69B69217A04EB0038195B /* Ligand3DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ligand3DViewController.swift; sourceTree = "<group>"; };
 		A2E69B6B217A215F0038195B /* LigandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 				A292D75521774EBC00DCEFA0 /* AppDelegate.swift */,
 				A292D75C21774EC700DCEFA0 /* Assets.xcassets */,
 				A292D76121774EC700DCEFA0 /* Info.plist */,
+				A2D8B460218B2866001B0DA0 /* credentials.plist */,
 			);
 			path = Swifty_Proteins;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				A292D74F21774EBC00DCEFA0 /* Frameworks */,
 				A292D75021774EBC00DCEFA0 /* Resources */,
 				09637278FC461509B190B71F /* [CP] Embed Pods Frameworks */,
+				51F952B8479AEEB746E1F63C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A292D76021774EC700DCEFA0 /* LaunchScreen.storyboard in Resources */,
+				A2D8B461218B2866001B0DA0 /* credentials.plist in Resources */,
 				A27F20222181C4D200B4A6C4 /* ElementsJSON.json in Resources */,
 				A292D75D21774EC700DCEFA0 /* Assets.xcassets in Resources */,
 				A292D75B21774EBC00DCEFA0 /* Main.storyboard in Resources */,
@@ -219,15 +224,41 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swifty_Proteins/Pods-Swifty_Proteins-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/PCLBlurEffectAlert/PCLBlurEffectAlert.framework",
+				"${BUILT_PRODUCTS_DIR}/Pulsator/Pulsator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PCLBlurEffectAlert.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulsator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swifty_Proteins/Pods-Swifty_Proteins-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51F952B8479AEEB746E1F63C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Swifty_Proteins/Pods-Swifty_Proteins-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swifty_Proteins/Pods-Swifty_Proteins-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CBFD5F794AD472F4FEBD0410 /* [CP] Check Pods Manifest.lock */ = {

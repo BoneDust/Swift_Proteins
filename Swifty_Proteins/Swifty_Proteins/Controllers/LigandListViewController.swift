@@ -176,7 +176,7 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
             
             let splitedAtom = atomString.split(separator: " ")
             let atom = getAtom(String(splitedAtom[11]))
-            let color = getCPKColor(String(splitedAtom[11]))
+            let color = getCPKColor(String(splitedAtom[11]).uppercased())
             let x = Float(splitedAtom[6])!
             let y = Float(splitedAtom[7])!
             let z = Float(splitedAtom[8])!
@@ -263,7 +263,7 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
                         {
                             if let atomData = element as? [String: Any]
                             {
-                                if (symbol == atomData["symbol"] as! String)
+                                if (symbol.lowercased() == (atomData["symbol"] as! String).lowercased())
                                 {
                                     atom = Atom(
                                         name: atomData["name"] as! String,
@@ -300,13 +300,13 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
                 return UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 1)
             case "O":
                 return UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
-            case "F", "Cl" :
+            case "F", "CL" :
                 return UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 1)
-            case "Br":
+            case "BR":
                 return UIColor(red: 220/255, green: 20/255, blue: 60/255, alpha: 1)
             case "I":
                 return UIColor(red: 148/255, green: 0/255, blue: 211/255, alpha: 1)
-            case "He", "Ne", "Ar", "Xe", "Kr":
+            case "HE", "NE", "AR", "XE", "KR":
                 return UIColor(red: 0/255, green: 255/255, blue: 255/255, alpha: 1)
             case "P":
                 return UIColor(red: 255/255, green: 165/255, blue: 0/255, alpha: 1)
@@ -314,13 +314,13 @@ class LigandListViewController: UIViewController,  UITableViewDelegate, UITableV
                 return UIColor(red: 255/255, green: 255/255, blue: 0/255, alpha: 1)
             case "B":
                 return UIColor(red: 250/255, green: 128/255, blue: 114/255, alpha: 1)
-            case "Li", "Na", "K", "Rb", "Cs", "Fr":
+            case "LI", "NA", "K", "RB", "CS", "FR":
                 return UIColor(red: 238/255, green: 130/255, blue: 238/255, alpha: 1)
-            case "Be", "Mg", "Ca", "Sr", "Ba", "Ra":
+            case "BE", "MG", "CA", "SR", "BA", "RA":
                 return UIColor(red: 0/255, green: 100/255, blue: 0/255, alpha: 1)
-            case "Ti":
+            case "TI":
                 return UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
-            case "Fe":
+            case "FE":
                 return UIColor(red: 255/255, green: 76/255, blue: 0/255, alpha: 1)
             default:
                 return UIColor(red: 255/255, green: 105/255, blue: 180/255, alpha: 1)

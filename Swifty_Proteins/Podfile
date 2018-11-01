@@ -1,11 +1,14 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+ use_frameworks!
+
 target 'Swifty_Proteins' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-  
-  pod "PCLBlurEffectAlert"
-  # Pods for Swifty_Proteins
+
+    pod "PCLBlurEffectAlert"
+    pod "Pulsator"
+	pod "GoogleSignIn"
 
 end
+
+

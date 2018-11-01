@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import PCLBlurEffectAlert
+import Pulsator
 
 class Ligand3DViewController: UIViewController
 {
@@ -112,10 +113,15 @@ class Ligand3DViewController: UIViewController
       //the other modelling
     }
     
-    func createNodeInfoPopup(_ title: String, _ message: String)
+    func createNodeInfoPopup(_ title: String, _ message: String, _ pulsator: Pulsator)
     {
+        
         let popup = PCLBlurEffectAlertController(title: title, message: message, effect: UIBlurEffect(style: .extraLight), style: .actionSheet)
-        let popupAction = PCLBlurEffectAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        let popupAction = PCLBlurEffectAlertAction(title: "Dismiss", style: .cancel)
+        {
+            _  in
+            pulsator.stop()
+        }//, handler: #selector(self.shareAction))
         popup.addAction(popupAction)
         popup.configure(cornerRadius: 10)
         //still need some configuring
@@ -139,8 +145,20 @@ class Ligand3DViewController: UIViewController
         if let  tappedItem = tappedItems.first
         {
             let tappedNode = tappedItem.node
+            
+            //adding blinkung pulse
+            let pulsator = Pulsator()
+            pulsator.numPulse = 3
+            pulsator.radius = 100.0
+            pulsator.backgroundColor = UIColor(red: 0/255, green: 200/255, blue: 0/255, alpha: 1).cgColor
+            let pos = ligandView.projectPoint(tappedNode.position)
+            pulsator.position = CGPoint(x: CGFloat(pos.x), y: CGFloat(pos.y))
+            ligandView.layer.addSublayer(pulsator)
+            pulsator.start()
+            
+            //create and show the popup
             let nodeDetails = tappedNode.name!.split(separator: "\n")
-            createNodeInfoPopup(String(nodeDetails[0]), String(nodeDetails[1]))
+            createNodeInfoPopup(String(nodeDetails[0]), String(nodeDetails[1]), pulsator)
         }
         
     }

@@ -1,16 +1,49 @@
 PODS:
+  - GoogleSignIn (4.3.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
+    - GoogleToolboxForMac/DebugUtils (= 2.1.4)
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.2.0):
+    - GTMSessionFetcher/Full (= 1.2.0)
+  - GTMSessionFetcher/Core (1.2.0)
+  - GTMSessionFetcher/Full (1.2.0):
+    - GTMSessionFetcher/Core (= 1.2.0)
   - PCLBlurEffectAlert (2.1.1)
+  - Pulsator (0.5.1)
 
 DEPENDENCIES:
+  - GoogleSignIn
   - PCLBlurEffectAlert
+  - Pulsator
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMOAuth2
+    - GTMSessionFetcher
     - PCLBlurEffectAlert
+    - Pulsator
 
 SPEC CHECKSUMS:
+  GoogleSignIn: 11183592dc63e105475c7305a325045ff95e02b7
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
+  GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   PCLBlurEffectAlert: 9671c027e17e9b054ed372fbecded167ea46daf9
+  Pulsator: f465ca37212d826523fe8c79b07c1a4c1a941f5e
 
-PODFILE CHECKSUM: de6558616497be44a75f7014366bbcfef552ee6f
+PODFILE CHECKSUM: 0e43f2bed3cebf34919c91141caf8a6b755822f7
 
 COCOAPODS: 1.5.3

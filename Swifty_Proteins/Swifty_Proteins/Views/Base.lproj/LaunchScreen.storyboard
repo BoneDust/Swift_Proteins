@@ -18,40 +18,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashImage" translatesAutoresizingMaskIntoConstraints="NO" id="Ixe-Pj-sXA">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swifty Proteins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqz-tp-fCE">
-                                <rect key="frame" x="120" y="536" width="135" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="gPa-sj-4y4"/>
-                                    <constraint firstAttribute="height" constant="25" id="pVJ-vL-S9z"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.10456791029834311" green="0.54994949472120069" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="110.66666666666669" y="164" width="154" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.53133152496514491" green="0.77885458567469201" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashImage" translatesAutoresizingMaskIntoConstraints="NO" id="Ixe-Pj-sXA">
-                                <rect key="frame" x="37.666666666666657" y="336" width="300" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Qav-ge-dOh"/>
-                                    <constraint firstAttribute="height" constant="150" id="jng-rG-MK2"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ixe-Pj-sXA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3Oe-Wf-pSL"/>
-                            <constraint firstItem="Ixe-Pj-sXA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CH8-qi-fRJ"/>
-                            <constraint firstItem="Xqz-tp-fCE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ogh-vz-uZ0"/>
-                            <constraint firstItem="Xqz-tp-fCE" firstAttribute="top" secondItem="Ixe-Pj-sXA" secondAttribute="bottom" constant="50" id="XV0-8A-SH0"/>
+                            <constraint firstItem="Ixe-Pj-sXA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4GZ-qh-yWn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ixe-Pj-sXA" secondAttribute="bottom" id="9hb-zO-j9h"/>
+                            <constraint firstItem="Xqz-tp-fCE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="FWM-BC-kYs"/>
+                            <constraint firstItem="Ixe-Pj-sXA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ROn-dO-oAU"/>
+                            <constraint firstItem="Xqz-tp-fCE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vt3-2i-aTQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ixe-Pj-sXA" secondAttribute="trailing" id="sqg-Gk-ffi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
     <resources>
-        <image name="SplashImage" width="1689" height="950"/>
+        <image name="SplashImage" width="414" height="602"/>
     </resources>
 </document>

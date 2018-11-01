@@ -8,15 +8,10 @@
 
 import UIKit
 import LocalAuthentication
+import GoogleSignIn
 
-class LoginViewController: UIViewController
+class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate
 {
-
-    
-    
-    @IBOutlet weak var Username: UITextField!
-    
-    @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var btnLogin: UIButton!
     
@@ -24,17 +19,32 @@ class LoginViewController: UIViewController
     
     @IBAction func loginInAction(_ sender: UIButton)
     {
-       
-        if (Username.text == "" || password.text == "")
-        {
-            self.createAlert(title: "Missing credentials", message: "Username or password is missing")
-        }
-        else
-        {
-            performSegue(withIdentifier: "ListSegue", sender: self)
-             //got nothing to do robably proceed to the next scrren
-        }
+        GIDSignIn.sharedInstance().signOut()
+        GIDSignIn.sharedInstance().signIn()
     }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!)
+    {
+        if (error != nil)
+        {
+            createAlert(title: "Google Auth failed", message: "Google signin was not authorised by user.")
+            print(error.localizedDescription)
+            return
+        }
+        performSegue(withIdentifier: "ListSegue", sender: self)
+    }
+    
+    
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!)
+    {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!)
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func touchIDAuth(_ sender: UIButton)
     {
@@ -49,8 +59,6 @@ class LoginViewController: UIViewController
                     {
                         self.performSegue(withIdentifier: "ListSegue", sender: self)
                     }
-                
-                    
                 }
                 else
                 {
@@ -59,18 +67,6 @@ class LoginViewController: UIViewController
                 
             }
         )
-    }
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        btnLogin.layer.cornerRadius = 15
-        checkTouchIDCapabiliy()
-    }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -101,5 +97,20 @@ class LoginViewController: UIViewController
                 touchButton.isHidden = true
             }
         }
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        btnLogin.layer.cornerRadius = 15
+        checkTouchIDCapabiliy()
+        GIDSignIn.sharedInstance().clientID = "419294114683-hp17127ml91p1g0p69vge908o90uikdm.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
     }
 }
